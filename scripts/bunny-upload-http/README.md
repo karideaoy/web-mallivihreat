@@ -15,11 +15,16 @@ Important env vars
 - DRY_RUN (default: true) — when true, only simulates uploads/deletes.
 - DELETE_MISSING (default: true) — when true, deletes remote files not present locally.
 
-Run with Docker (recommended)
-1. Build site: bundle exec jekyll build
-2. Build image:
+Local testing (Docker)
+1. Build site: `bundle exec jekyll build`
+2. Run test script: `./bin/test-docker.sh`
+   - This script mimics the GitHub Actions environment and uses the exact same `docker run` command.
+   - It loads variables from a `.env` file if present.
+
+Manual Docker usage
+1. Build image:
    docker build -t bunny-uploader-http scripts/bunny-upload-http
-3. Run uploader (real run):
+2. Run uploader (real run):
    docker run --rm \
      -e BUNNY_REGION="your_region" \
      -e BUNNY_API_KEY="your_key" \

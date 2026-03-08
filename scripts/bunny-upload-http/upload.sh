@@ -10,7 +10,7 @@ fi
 
 DRY_RUN="${DRY_RUN:-true}"
 DELETE_MISSING="${DELETE_MISSING:-true}"
-SITE_DIR="/_site"
+SITE_DIR="${SITE_DIR:-/site}"
 if [ -z "${BUNNY_REGION:-}" ] || [ "${BUNNY_REGION}" = "de" ]; then
   BASE_URL="https://storage.bunnycdn.com/${BUNNY_STORAGE_ZONE}"
 else
