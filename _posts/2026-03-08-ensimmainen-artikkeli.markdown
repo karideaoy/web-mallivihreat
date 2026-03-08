@@ -2,7 +2,7 @@
 layout: post
 title:  "Verkkosivusto staattisesti"
 date:   2026-03-08 15:50:00 +0200
-categories: sivusto
+categories: [sivusto]
 ---
 Sivuston artikkelit kirjoitetaan [Markdown](https://en.wikipedia.org/wiki/Markdown)-koodauksella. Se on yksinkertainen kuvauskieli, joka on nopea oppia. Artikkelien kirjoittamiseksi ei tarvitse opetella koodariksi. Jonkin verran teknistä ymmärrystä tarvitaan.
 
