@@ -14,7 +14,7 @@ trap cleanup SIGINT SIGTERM
 bundle exec jekyll serve --host 0.0.0.0 --port 4000 &
 
 # Wait for the server to start
-sleep 5
+sleep 3
 
 # Open the specific URL in Firefox
 open -a "Firefox" http://localhost:4000

@@ -1,0 +1,50 @@
+---
+layout: default
+---
+
+<div class="style style--lightGray-dark">
+  <section class="l-headline">
+    <div class="l-headline__container">
+      <h1 class="c-headline-text-buttons__headline">{{ page.title | default: site.title }}</h1>
+    </div>
+  </section>
+</div>
+
+<div class="style style--lightGreen-dark">
+  <section class="l-visual-editor">
+    <div class="l-visual-editor__container">
+      <div class="frontpage-noteworthy">
+        {{ content }}
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="style style--white-dark">
+  <section class="l-image-and-text">
+    <div class="l-image-and-text__container">
+      <div class="l-image-and-text__text-wrapper">
+        <h2 class="c-image-and-text__headline">{{ page.list_title | default: "Viimeisimmät kirjoitukset" }}</h2>
+        <ul class="post-list">
+          {%- for post in site.posts -%}
+            <li>
+              <h3>
+                <a class="post-link" href="{{ post.url | relative_url }}">
+                  {{ post.title | escape }}
+                </a>
+              </h3>
+              <p class="post-meta">{{ post.date | date: "%-d.%-m.%Y" }}
+                {% if post.categories.size > 0 %}
+                  •
+                  {% for category in post.categories %}
+                    <a href="{{ site.baseurl }}/{{ category | slugify }}/">{{ category }}</a>{% unless forloop.last %}, {% endunless %}
+                  {% endfor %}
+                {% endif %}
+              </p>
+            </li>
+          {%- endfor -%}
+        </ul>
+      </div>
+    </div>
+  </section>
+</div>

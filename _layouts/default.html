@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<!--suppress HtmlUnknownAttribute -->
+<html lang="{{ page.lang | default: site.lang | default: "fi" }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title }} | {{ site.title }}</title>
+  <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
+  {% feed_meta %}
+  {% seo %}
+</head>
+<body>
+  {% include header.html %}
+
+  <main id="site-content" class="l-site-content">
+    {{ content }}
+  </main>
+
+  {% include footer.html %}
+</body>
+</html>

@@ -1,0 +1,36 @@
+---
+layout: default
+---
+
+<div class="style style--white-dark">
+  <article class="l-visual-editor">
+    <div class="l-visual-editor__container">
+      <div class="maincontent">
+        <header>
+          <h1>Kategoria: {{ page.title }}</h1>
+        </header>
+
+        <ul class="post-list">
+          {% assign category_posts = site.posts | where_exp: "post", "post.categories contains page.slug" %}
+          {% for post in category_posts %}
+            <li>
+              <h3>
+                <a class="post-link" href="{{ post.url | relative_url }}">
+                  {{ post.title | escape }}
+                </a>
+              </h3>
+              <p class="post-meta">{{ post.date | date: "%-d.%-m.%Y" }}
+                {% if post.categories.size > 0 %}
+                  •
+                  {% for category in post.categories %}
+                    <a href="{{ site.baseurl }}/{{ category | slugify }}/">{{ category }}</a>{% unless forloop.last %}, {% endunless %}
+                  {% endfor %}
+                {% endif %}
+              </p>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </article>
+</div>
