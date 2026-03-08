@@ -11,7 +11,8 @@ layout: default
         </header>
 
         <ul class="post-list">
-          {% assign category_posts = site.posts | where_exp: "post", "post.categories contains page.slug" %}
+          {% assign category_slug = page.slug | default: page.title | slugify %}
+          {% assign category_posts = site.posts | where_exp: "post", "post.categories contains category_slug" %}
           {% for post in category_posts %}
             <li>
               <h3>
