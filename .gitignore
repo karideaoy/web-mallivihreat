@@ -5,3 +5,6 @@ _site
 vendor
 *.iml
 .idea/
+
+# Allow Gemfile.lock even if ignored globally
+!Gemfile.lock
