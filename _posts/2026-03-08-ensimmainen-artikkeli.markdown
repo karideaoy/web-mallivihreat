@@ -8,7 +8,7 @@ Sivuston artikkelit kirjoitetaan [Markdown](https://en.wikipedia.org/wiki/Markdo
 
 Katso tarkemmat ohjeet artikkelin kirjoittamisesta JekyllRB-työkalun [omasta dokumentaatiosta](https://jekyllrb.com/docs/posts/).
 
-Jos haluat katsoa, miltä tämän artikkelin "lähdekoodi" näyttää, katso tiedosto lähdekoogin hallinnasta [Github-palvelusta](https://github.com/karideaoy/web-mallivihreat).
+Jos haluat katsoa, miltä tämän artikkelin "lähdekoodi" näyttää, katso tiedosto lähdekoogin hallinnasta [Github-palvelusta](https://github.com/karideaoy/web-mallivihreat/blob/main/_posts/2026-03-08-ensimmainen-artikkeli.markdown).
 
 ### Staattinen vs. dynaaminen sivusto
 
