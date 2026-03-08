@@ -54,3 +54,4 @@ exclude:
   - vendor/ruby/
   - bin/
   - misc/
+  - scripts/
