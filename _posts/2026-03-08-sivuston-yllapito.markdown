@@ -2,7 +2,7 @@
 layout: post
 title:  "Sivuston ylläpitoon tarvittavat komponentit"
 date:   2026-03-08 16:39:00 +0200
-categories: sivusto
+categories: [sivusto]
 ---
 Verkkosivuston rakentaminen ja ylläpito vaatii yleensä useita erilaisia teknisiä komponentteja. Perinteisissä sisällönhallintajärjestelmissä (kuten WordPress) tarvitaan palvelin, ohjelmistokieli (kuten PHP) ja tietokanta (kuten MySQL). 
 
@@ -11,7 +11,7 @@ Jekyll-pohjainen sivusto on kuitenkin rakenteeltaan erilainen. Se on staattinen 
 ### 1. Verkkotunnus (Domain)
 Kaikki alkaa omasta verkkotunnuksesta eli domainista. Kannattaa hankkia [suomalainen **.fi**-verkkotunnus](http://domain.fi/), joka viestii luotettavuudesta ja paikallisuudesta. Verkkotunnuksen hankkimiseen tarvitaan verkkotunnusoperaattori, joka rekisteröi osoitteen ja huolehtii sen voimassaolosta. Verkkotunnuksen ylläpitoon liittyy olennaisesti myös **DNS-palvelu**, jolla osoite ohjataan oikeaan paikkaan verkossa.
 
-Verkkotunnus on sivuston omistajan nimissä. Karidea voi toimia omistajan asiamiehenä verkkotunnuksen rekisteröinnissä, mutta sivuston omistaja rekisteröidään verkkitunnuksen haltijaksi.
+Verkkotunnus on sivuston omistajan nimissä. Karidea voi toimia omistajan asiamiehenä verkkotunnuksen rekisteröinnissä, mutta sivuston omistaja rekisteröidään verkkotunnuksen haltijaksi.
 
 Karidea käyttää verkkotunnusoperaattorina saksalaista yhtiötä [joker.com](https://joker.com).
 
