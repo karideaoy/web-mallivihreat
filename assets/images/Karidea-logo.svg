@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="uuid-e27150df-faf9-4c5f-872a-223b808290fa" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 855.14 233.4">
+  <g id="uuid-24e45d96-0a46-4810-860b-0c9c92e2d00b" data-name="Group 240">
+    <g id="uuid-0b620b80-02c4-4251-a027-3a16aa4cede5" data-name="K">
+      <rect id="uuid-ee946bf7-7e67-4063-bd96-43d5e5b14294" data-name="Rectangle 1569" x="77.51" y="78.38" width="12.3" height="77.51" fill="#000" stroke-width="0"/>
+      <path id="uuid-26bc27b6-0667-42d1-b573-266333b43517" data-name="Rectangle 1570" d="M78.25,119.38l55.56-40.93,7.3,9.9-55.56,40.93c-.44.33-1.07.23-1.4-.21l-6.11-8.29c-.33-.44-.23-1.07.21-1.4Z" fill="#000" stroke-width="0"/>
+      <rect id="uuid-30618e14-83a3-4ffa-88fa-e7f0339f5d67" data-name="Rectangle 1571" x="93.93" y="116.54" width="32.7" height="12.3" transform="translate(-51.28 89.31) rotate(-36.38)" fill="#000" stroke-width="0"/>
+      <rect id="uuid-8eff7d62-df40-439c-82c6-bde3d1c3d280" data-name="Rectangle 1572" x="106.49" y="128.92" width="26.28" height="12.3" transform="translate(-56.8 97.27) rotate(-36.38)" fill="#000" stroke-width="0"/>
+      <rect id="uuid-4994cf52-0228-4587-b37c-4418c516b996" data-name="Rectangle 1573" x="122.63" y="139.48" width="17.66" height="12.3" transform="translate(-60.75 106.33) rotate(-36.37)" fill="#000" stroke-width="0"/>
+    </g>
+    <g id="uuid-5259ff7a-cc6d-4a5b-bbcc-105311bffe99" data-name="aridea">
+      <path id="uuid-3f5ec0be-a799-40f1-9128-c9f8590ede6e" data-name="Path 331" d="M332.43,128.19l1.95-.08,12.86,27.4h13.84l-14.98-30.31,2.4-1.37c7.68-4.37,11.57-11.35,11.57-20.73h0c0-15.25-10.36-25.11-26.39-25.11h-32.05v77.51h12.24v-27.24h15.49c1.09,0,2.16-.04,3.07-.08M313.87,88.62h18.47c9.13,0,15.26,5.84,15.26,14.54s-6.3,14.89-15.32,14.89h-18.41v-29.43Z" fill="#000" stroke-width="0"/>
+      <rect id="uuid-5ac4ab52-28e2-4b00-947c-4706e8a0b4b0" data-name="Rectangle 1574" x="412.73" y="77.92" width="12.39" height="77.67" fill="#000" stroke-width="0"/>
+      <path id="uuid-454cef28-9c1a-4100-b030-a6805d99870e" data-name="Path 332" d="M551.25,116.78c0-21.78-18.04-38.84-41.07-38.84h-27.84v77.62h28.01c22.93,0,40.9-17.03,40.9-38.78M494.67,89.31h16.03c15.95,0,27.98,11.81,27.98,27.47s-11.95,27.42-27.8,27.42h-16.2v-54.89Z" fill="#000" stroke-width="0"/>
+      <path id="uuid-8c236ffa-b801-467c-bbc2-85443f34dbc2" data-name="Path 333" d="M650.14,121.13v-10.08h-34.12v-22.24h42.7v-10.89h-55.08v77.67h55.96v-10.89h-43.57v-23.56h34.11Z" fill="#000" stroke-width="0"/>
+      <path id="uuid-7160a513-b20c-4066-97bf-c253c8b2bb8a" data-name="Path 334" d="M777.63,155.89l-31.02-78.38h-12.08l-31.13,78.38h13.33l5.1-13.91.61-1.67h36.15l.62,1.66,5.16,13.92h13.28ZM751.07,129.8h-24.71l1.26-3.43,10.5-28.56,2.39-6.49,2.4,6.49,10.56,28.56,1.27,3.43h-3.66Z" fill="#000" stroke-width="0"/>
+      <path id="uuid-bf132a09-fc50-46f6-a963-7779ed390058" data-name="Path 335" d="M192.01,155.89l5.1-13.91.61-1.67h36.15l.62,1.66,5.16,13.92h13.27l-31.02-78.38h-12.08l-31.14,78.38h13.33ZM202.91,126.37l10.5-28.56,2.39-6.5,2.4,6.49,10.55,28.56,1.27,3.43h-28.37l1.26-3.43Z" fill="#000" stroke-width="0"/>
+    </g>
+  </g>
+  <rect width="855.14" height="233.4" fill="none" stroke-width="0"/>
+</svg>
