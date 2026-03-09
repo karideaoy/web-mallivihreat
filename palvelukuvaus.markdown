@@ -7,7 +7,7 @@ Tämä dokumentti kuvaa otsikossa nimetyn palvelun toteutuksen sekä oikeudet, v
 
 ## Versio
 
-Tämä palvelukaus on päivätty 9.3.2026. Tämän jälkeen julkaistut uudet versiot tästä palvelukuvauksesta korvaavat aiemmat versiot. Palvelukuvaus on kirjoitettu suomen kielellä. Mahdolliset käännökset vain täydentävät palvelukuvausta ja eivät ole pätäviä. Ainoastaan suomenkielinen versio määrittää palvelukuvauksen tulkinnan.
+Tämä palvelukuvaus on päivätty 9.3.2026. Tämän jälkeen julkaistut uudet versiot tästä palvelukuvauksesta korvaavat aiemmat versiot. Palvelukuvaus on kirjoitettu suomen kielellä. Mahdolliset käännökset vain täydentävät palvelukuvausta ja eivät ole päteviä. Ainoastaan suomenkielinen versio määrittää palvelukuvauksen tulkinnan.
 
 ## Versiohistoria
 
@@ -34,6 +34,7 @@ Tämä palvelukaus on päivätty 9.3.2026. Tämän jälkeen julkaistut uudet ver
 * [Rajoitukset](#rajoitukset)
 * [Tekijänoikeus](#tekijänoikeus)
 * [Ylivoimainen este](#ylivoimainen-este)
+* [Sopimuksen päättyminen ja irtisanominen](#sopimuksen-päättyminen-ja-irtisanominen)
 * [Hinnasto](#hinnasto)
   * [Tilaajan hinnasto](#tilaajan-hinnasto)
   * [Asiakkaan hinnasto](#asiakkaan-hinnasto)
@@ -50,24 +51,26 @@ Tämä palvelukaus on päivätty 9.3.2026. Tämän jälkeen julkaistut uudet ver
 |---------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Toimittaja          | Palvelun toteuttava yritys, tässä Karidea Oy                                                                                                                                           |
 | Tilaaja             | Palvelun tilaava osapuoli, tässä Uudenmaan Vihreät ry                                                                                                                                  |
-| Aiakas              | Palvelua käyttävä osapuoli, tässä Uudenmaan Vihreiden jäsen tai ehdokas tms                                                                                                            |
+| Asiakas             | Palvelua käyttävä osapuoli, tässä Uudenmaan Vihreiden jäsen tai ehdokas tms                                                                                                            |
 | Loppukäyttäjä       | Verkkosivuja käyttävä ja lukeva vierailija                                                                                                                                             |
+| Palvelukausi | Vuosineljännes, jonka aikana palvelua käytetään tai on käytetty                                                                                                                        |
 | Verkkotunnus        | Internet-verkossa luonnollisen tai oikeushenkilön nimiin rekisteröity tunniste, jolla internetissä julkaistut palvelut erotetaan toisistaan                                            |
 | DNS, nimipalvelu    | DNS, eli Domain Name Services on nimipalvelu, jolla verkkotunnuksen osoittaman nimen mukainen tekninen osoite palvelun sijainnille internet-verkossa pystytään teknisesti selvittämään |
 | Operointiautomaatio | Automaattisesti toimiva työnkulku, joka rakentaa sivuston tekniset tiedostot ja toimittaa tiedostot alustapalveluun julkaistavaksi                                                     |
 | Alustapalvelu | Tekninen alusta, jolla verkkosivustot teknisesti julkaistaan loppukäyttäjien katseltavaksi, tässä [bunny.net](https://bunny.net)                                                       |
+| Lähdekoodi | Koodisto, jonka perusteella verkkusivusto muodostetaan sivustogeneraattorin avulla                                                                                                     |
 | Palvelutaso         | SLA, eli Service Level Agreement määrittää, miten palvelu ja siihen liittyvä tuki on saatavilla                                                                                        |
 | Best Effort         | Palvelu on saatavilla niiden resurssien perusteella, joita yhtiöllä on tavanomaisen kapasiteettinsa puitteissa, mutta erityistä palvelutasolupausta ei nimetä                          |
 | Kohtuullinen käyttö | Kuvaa tyypillistä käytön kuormitusta palvelun tarkoituksen perusteella                                                                                                                 |
 
 ## Tärkeät osoitteet ja yhteystiedot
 
-| Aihe | Osoite                                                                                                                                           |
-|---|--------------------------------------------------------------------------------------------------------------------------------------------------|
-| Yhteydenottokanva, tukipalvelu | <a href="mailto:info@karidea.eu">info@karidea.eu</a>                                                                                             |
-| Itsepalvelukanava, asiakaspalvelu | [Karidea asiakaspalvelu](https://test-idp.olevi.fi/mgmforms/) ⎼ edellyttää kirjautumisen sähköpostilla                                           |
-| Ajanvaraus | [ajanvaraus.olevi.fi](https://ajanvaraus.olevi.fi) - edellyttää sähköpostiosoitteen vahvistamisen kertakäyttkoodilla tai Microsoft-kirjautumisen |
-| Verkkotunnushinnasto | Verkkotunnusvälittäjän [hinnaston](https://joker.com/domain/prices) mukaisesti |
+| Aihe | Osoite                                                                                                                                                       |
+|---|--------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Yhteydenottokanava, tukipalvelu | <a href="mailto:info@karidea.eu">info@karidea.eu</a>                                                                                                         |
+| Itsepalvelukanava, asiakaspalvelu | [Karidea asiakaspalvelu](https://test-idp.olevi.fi/mgmforms/) ⎼ edellyttää kirjautumisen sähköpostilla, mahdollisuus laitetunnisteen ([Passkeys](https://fi.wikipedia.org/wiki/WebAuthn)) käyttöön |
+| Ajanvaraus | [ajanvaraus.olevi.fi](https://ajanvaraus.olevi.fi) - edellyttää sähköpostiosoitteen vahvistamisen kertakäyttökoodilla tai Microsoft-kirjautumisen            |
+| Verkkotunnushinnasto | Verkkotunnusvälittäjän [hinnaston](https://joker.com/domain/prices) mukaisesti                                                                               |
 
 ## Tietosuoja
 
@@ -77,7 +80,9 @@ Palvelussa ei käsitellä loppukäyttäjien henkilötietoja. Toimittaja **EI OLE
 
 ## Mitä palvelu on
 
-Toimittaja toteuttaa palvelulla tilaajalle pakettihinnoittelun mukaisen joukon verkkosivustoja tilaajan organisaatiooon kuuluville asiakkaille. Tämä sivusto, jossa tämä palvelukauvs julkaistaan on esimerkki palvelun toteutuksesa.
+Toimittaja toteuttaa palvelulla tilaajalle pakettihinnoittelun mukaisen joukon verkkosivustoja tilaajan organisaatiooon kuuluville asiakkaille. Tämä sivusto, jossa tämä palvelukuvaus julkaistaan on esimerkki palvelun toteutuksessa.
+
+Tilaus on voimassa toistaiseksi vuosineljänneksittäin, eli 3 kuukauden palvelujaksoissa. Palvelu voidaan käynnistää tai sen volyymia voidaan tarkistaa vuosineljänneksien mukaisissa palvelujaksoissa.
 
 ## Mitä palvelu sisältää
 
@@ -88,14 +93,17 @@ Toimittaja koostaa verkkosivupalvelun seuraavista komponenteista:
   * Loppukäyttäjä saa pääsyn projektiinsa lähdekoodin hallintapalvelussa ja päivittää sivustoaan sen tai yleisen Git-työkalun avulla (edellyttää kirjautumista Github-palveluun)
 * Sivustogeneraattori ([JekyllRB](https://jekyllrb.com))
   * JekyllRB on [MIT-lisenssillä](https://github.com/jekyll/jekyll/blob/master/LICENSE) julkaistu avoimen lähdekoodin ohjelmisto
-* Operointiautomaatio ([Gihub Actions](https://github.com/actions))
+  * Jekyll-moottori on avoimen lähdekoodin projekti
+  * Toimittaja ei ota vastuuta sivustogeneraattorissa piilevistä virheistä
+  * Avoimen lähdekoodin luonne mahdollistaa koodin läpinäkyvyyden ja yhteisöllisen tietoturva-auditoinnin, mutta se toimitetaan "sellaisenaan" ilman takuuta
+* Operointiautomaatio ([GitHub Actions](https://github.com/actions))
 * Alustapalvelun tietosäilö ([Bunny Storage](https://bunny.net/storage/))
 * Sivuston jakelupalvelu ([Bunny CDN](https://bunny.net/cdn/))
 * Palvelutaso (SLA) mahdollisuuksien mukaan (best effort)
   * Palvelu ei sisällä varallaoloa tai valmiutta
   * Palvelu on saatavilla siihen liittyvien alustapalveluiden perusteella
   * Toimittaja ei erikseen myönnä nimettyä palvelutasoa, vaan vastaa mahdollisiin virheisiin, puutteisiin, katkoihin tai muihin ongelmiin saatavuutensa mukaisesti tavanomaisilla resursseillaan
-* Yhteydenottokanavan sähköpostilla
+* Yhteydenottokanava on sähköposti
 
 ## Mitä palvelu ei sisällä
 
@@ -117,7 +125,9 @@ Toimittaja koostaa verkkosivupalvelun seuraavista komponenteista:
   * Asiakas vastaa itse sivustonsa _lähdekoodin_ ja muun sisällön varmuuskopioinnista omaan käyttöönsä mahdollisten poikkeuksellisten häiriöiden varalta
 * Verkkosivuston siirto asiakkaan aiemmasta palvelusta palvelun käyttöönoton yhteydessä
 * Verkkosivuston siirto toiseen palveluun palvelun päättyessä
-* Tilaajan tai asiakkaan omista työvälineistä huolemtimisen
+* Tilaajan tai asiakkaan omista työvälineistä huolehtimisesta
+* Saavutettavuus
+  * Asiakas vastaa itse sivuston saavutettavuudesta ([WCAG-vaatimukset](https://fi.wikipedia.org/wiki/WCAG)) ja sisällön soveltuvuudesta eri päätelaitteille ja apuvälineille.
 
 
 ## Mitä palvelu ei ole
@@ -132,12 +142,12 @@ Toimittaja koostaa verkkosivupalvelun seuraavista komponenteista:
   * Liikennemäärän ylittäessä kohtuullisen käytön palvelu voidaan sulkea ylimääräisten kustannusten välttämiseksi
 * Kuvagalleria
 * Tiedostojen jakopalvelu
-  * Palvelusta julkaisaan ainoastaan tavanomaista tekstimuotoista verkkosisältöä
+  * Palvelusta julkaistaan ainoastaan tavanomaista tekstimuotoista verkkosisältöä
   * Kuvien, mediatiedostojen ja muiden suurten tiedostojen jakelu on järjestettävä erikseen
   * Asiakas voi sopia toimittajan kanssa erikseen mediatiedostojen julkaisuun soveltuvasta erillispalvelusta
 * Videopankki
   * Palvelu ei ole tarkoitettu video-ohjelmien jakeluun
-  * Asiakas voi upottaa verkkosivustolle kolmannen osapuolen videopankin sisältöä, jos kolmannen osapuolen palvelu sen mahdollistaa yhteensopivasti tämän palvelun ehtojen mukaisesti huomioiden tässä palvelukuvauksessa huomioidut rajoituksen henkilötietojen käsittelylle
+  * Asiakas voi upottaa verkkosivustolle kolmannen osapuolen videopankin sisältöä, jos kolmannen osapuolen palvelu sen mahdollistaa yhteensopivasti tämän palvelun ehtojen mukaisesti huomioiden tässä palvelukuvauksessa huomioidut rajoitukset henkilötietojen käsittelylle
   * Asiakas voi sopia toimittajan kanssa erikseen videoiden julkaisuun soveltuvasta erillispalvelusta 
 * Henkilörekisteri
   * Palvelu on tarkoitettu ainoastaan verkkosivujen julkaisuun, eli ulospäin suuntautuvaan liikenteeseen
@@ -163,7 +173,7 @@ Käytön rajoitus voidaan tehdä myös esimerkiksi maantieteellisesti siten, ett
 
 ## Maantieteelliset rajoitukset
 
-Palvelulla julkaistuihin verkkosivuihin estetään pääsy lähtökohtaisesti alla luetelluilta maantieteellisiltä alueilta. Rajoitus perustuu yleiseen tietämykseen Internet-verkossa yleisesti aiheutetusta haitaliikenteestä.
+Palvelulla julkaistuihin verkkosivuihin estetään pääsy lähtökohtaisesti alla luetelluilta maantieteellisiltä alueilta. Rajoitus perustuu yleiseen tietämykseen Internet-verkossa yleisesti aiheutetusta haittaliikenteestä.
 
 * Afganistan
 * Azerbaidžan
@@ -189,7 +199,7 @@ Rajoitusalueet voivat muuttua kulloinkin ajankohtaisen uhkakuvan mukaisesti.
 
 Toimittaja voi toimia asiakkaan asiamiehenä verkkotunnuksen rekisteröinnissä verkkotunnusvälittäjälle (joker.com). Toimittaja **EI OLE** verkkotunnusvälittäjä. Asiakas vastaa itse, että hänellä on [verkkotunnuslain](https://www.finlex.fi/fi/lainsaadanto/saadoskokoelma/2003/228) mukainen oikeus rekisteröidä verkkotunnus nimiinsä.
 
-Verkkotunnus rekisteröidään valitun tunnuksen ja asiakkaan valitseman rekisteröintijakson mukaisesti. Yleinen rekisteröintijakso on yksi vuosi. Relkisteröinti uusitaan rekisteröintijakson mukaisesti ja uusimisesta aiheutuva maksu laskutetaan asiakkaalta materiaaliperusteisesti verkkotunnusvälittäjän hinnaston mukaisesti.
+Verkkotunnus rekisteröidään valitun tunnuksen ja asiakkaan valitseman rekisteröintijakson mukaisesti. Yleinen rekisteröintijakso on yksi vuosi. Rekisteröinti uusitaan rekisteröintijakson mukaisesti ja uusimisesta aiheutuva maksu laskutetaan asiakkaalta materiaaliperusteisesti verkkotunnusvälittäjän hinnaston mukaisesti.
 
 Mikäli verkkotunnus siirretään toiselta verkkotunnusvälittäjältä, asiakas hankkii välittäjän vaihtovarmenteen nykyiseltä verkkotunnusvälittäjältään.
 
@@ -210,7 +220,7 @@ Katso tarkemmat ohjeet suomalaisen .fi -verkkotunnuksen osalta Liikenne- ja vies
 3. Toimittaja koostaa palvelukomponentit palvelun sisällön mukaisesti
 4. Asiakkaan verkkotunnus rekisteröidään ohjaamaan liikenne palveluun
 
-Palvelun käyttöönoton vaiheissa ja palvelun voimassaolon aikana palvelulle annetaan myös vaihtoehtoinen verkkotunnus toimittajan tai ao. palvelukomponentin nimiavaruudesta. Asiakas voi käyttää tätä vaihtoehtoista verkkotununnusta palvelua käynnistäessään ennen kuin varsinaisen verkkotunnuksen liikenne ohjataan palveluun.
+Palvelun käyttöönoton vaiheissa ja palvelun voimassaolon aikana palvelulle annetaan myös vaihtoehtoinen verkkotunnus toimittajan tai ao. palvelukomponentin nimiavaruudesta. Asiakas voi käyttää tätä vaihtoehtoista verkkotunnusta palvelua käynnistäessään ennen kuin varsinaisen verkkotunnuksen liikenne ohjataan palveluun.
 
 Asiakaskohtainen palvelupaketti sisältää yhden tunnin (1 h) toimittajan työtä palvelun käyttöönotossa. Mahdollinen ylittävä työmäärä laskutetaan tukipalveluna hinnaston mukaisesti.
 
@@ -240,6 +250,19 @@ Osapuoli vapautuu velvoitteistaan ja velvollisuudestaan maksaa vahingonkorvausta
 
 Ylivoimaisena esteenä (force majeure) pidetään sellaista osapuolista riippumatonta, epätavallista ja asiaan vaikuttavaa tapahtumaa, joka tapahtuu sopimuksen solmimisen jälkeen ja joka on osapuolille ennalta arvaamaton ja jota osapuoli ei voi kohtuudella estää. Tällaisia tapahtumia ovat esimerkiksi sota, kapina, luonnonmullistus, yleisen liikenteen tai energianjakelun keskeytys, lakko tai muu siihen verrattava työtaistelutoimenpide, tulipalo tai muu vaikutuksiltaan vastaava ja osapuolesta riippumaton syy.
 
+## Sopimuksen päättyminen ja irtisanominen
+
+Asiakas voi irtisanoa palvelun päättymään kunkin palvelujakson loppuun. Irtisanominen on tehtävä toimittajan asiakaspalvelussa itsepalveluna viimeistään 2 viikkoa ennen uuden palvelujakson alkamista.
+
+Tilaaja voi irtisanoa palvelun päättymään kunkin palvelujakson loppuun ilmoittamalla tästä toimittajalle kirjallisesti sähköpostilla edellisen kokonaisen kuukauden loppuun mennessä ennen uuden palvelujakson alkamista.
+
+Toimittaja voi irtisanoa tilaajan palvelun päättymään kunkin palvelujakson loppuun ilmoittamalla tästä tilaajalle kirjallisesti sähköpostilla edellisen kokonaisen kuukauden loppuun mennessä ennen uuden palvelujakson alkamista. Jos toimittaja irtisanoo tilaajan tilauksen, on tilaajan velvollisuus ilmoittaa palvelun päättymisestä asiakkaille.
+
+Toimittaja voi irtisanoa yksittäisen asiakkaan palvelun päättymään kunkin palvelujakson loppuun ilmoittamalla tästä asiakkaalle kirjallisesti sähköpostilla viimeistään 2 viikkoa ennen palvelujakson päättymistä.
+
+Palvelun päättyessä tehdään tilitys, jonka perusteella toimittaja laskuttaa tilaajaa ja/tai asiakasta palvelukaudella kertyneistä tilauksen volyymin ylittämistä lisätilauksista.
+
+
 # Hinnasto
 
 * Kaikkiin hintoihin lisätään arvonlisävero 25,5% riippumatta tilaajan tai asiakkaan arvonlisäverovelvollisuudesta
@@ -247,13 +270,13 @@ Ylivoimaisena esteenä (force majeure) pidetään sellaista osapuolista riippuma
 * Hinta-sarake ilmaisee hinnan paketin mukaista kappalemäärää kohden
   * Tilaaja voi tilata paketteja vain määrä-sarakkeen mukaisella kertoimella
 * Hinnaston hinnat ovat kuukautta kohden
-* Toimittajalla on oikeus muutttaa hinnastoa alkaen seuraavasta 3 kuukauden palvelujaksosta ilmoittamalla siitä etukäteen tilaajalle 2 vk ennen palvelujakson päättymistä
+* Toimittajalla on oikeus muuttaa hinnastoa alkaen seuraavasta palvelujaksosta ilmoittamalla siitä tilaajalle kirjallisesti sähköpostilla palvelujakson päättymistä edeltävän kokonaisen kuukauden loppuun mennessä 
 * Tilaaja voi neuvotella tapauskohtaisen yleishinnastosta poikkeavan erikoishinnan
-  * Vekkotunnuksen rekisteröinin hinnoista ei voi saada alennusta
+  * Verkkotunnuksen rekisteröinnin hinnoista ei voi saada alennusta
 
 ## Tilaajan hinnasto
 
-| Kohde | Määrä | Hinta | Hintaperuste | laskutusperuste                     |
+| Kohde | Määrä | Hinta | Hintaperuste | Laskutusperuste                     |
 |-------|-------|-------|--------------|-------------------------------------|
 | Verkkosivustopaketti | 10    | 300   | €/paketti | paketti                             |
 | Tukipalvelu | 4     | 50    | €/h  | paketti, raportoidaan 15 min erissä |
@@ -261,10 +284,10 @@ Ylivoimaisena esteenä (force majeure) pidetään sellaista osapuolista riippuma
 
 ## Asiakkaan hinnasto
 
-| Kohde                         | Määrä | Hinta                | Hintaperuste | laskutusperuste                                 |
-|-------------------------------|-------|----------------------|--------------|-------------------------------------------------|
+| Kohde                         | Määrä | Hinta                | Hintaperuste | Laskutusperuste                                                                |
+|-------------------------------|-------|----------------------|--------------|--------------------------------------------------------------------------------|
 | Verkkotunnuksen rekisteröinti | 1 | määritetään erikseen | materiaali | verkkotunnusvälittäjän [hinnaston](https://joker.com/domain/prices) mukaisesti |
-| Erikseen tilattu tukipalvelu | 1 | 50 | €/h | min 1h, raportoidaan 15 min erissä |
+| Erikseen tilattu tukipalvelu | 1 | 50 | €/h | min 1h, raportoidaan 15 min erissä                                             |
 
 ## Tilaajan hintaesimerkki
 
@@ -284,33 +307,28 @@ Ylivoimaisena esteenä (force majeure) pidetään sellaista osapuolista riippuma
 
 ## Tilaajan laskutus
 
-Toimittaja laskuttaa tilauksen volyymin mukainen palvelumaksun 3 kuukauden välein jokaisen 3 kk:n palvelujakson alkaessa. Mahdolliset palvelujaksolla laskutetun tilauksen volyymin ylittävät lisätilaukset laskutetaan seuraavan palvelujakson alkaessa tai palvelun käytön loppuessa loppulaskuna.
-
-Lasku lähetetään sähköisesti tilaajan ilmoittamaan sähköiseen laskutusosoitteeseen. Tilaaja ilmoittaa toimittajalle ennen palvelun avaamista:
-* Verkkolasku-osoite
-* Verkkolasku-operaattorin nimi
-* OVT-tunnus
-
-Maksuaika laskusta on 14 päivää.
-
-Viivästyskorko korkolain mukaisesti.
-
-Toimittaja voi myydä laskun laskutus- tai perintäpalvelulle edelleen perittäväksi (factoring).
+* Toimittaja laskuttaa tilauksen volyymin mukaisen palvelumaksun palvelujaksoa kohden jokaisen palvelujakson alkaessa. Mahdolliset palvelujaksolla laskutetun tilauksen volyymin ylittävät lisätilaukset laskutetaan seuraavan palvelujakson alkaessa tai palvelun käytön loppuessa tilityksen mukaisesti.
+* Lasku lähetetään sähköisesti tilaajan ilmoittamaan sähköiseen laskutusosoitteeseen. Tilaaja ilmoittaa toimittajalle ennen palvelun avaamista:
+  * Verkkolasku-osoite
+  * Verkkolasku-operaattorin nimi
+  * OVT-tunnus
+* Maksuaika laskusta on 14 päivää
+* Viivästyskorko korkolain mukaisesti
+* Toimittaja voi myydä laskun laskutus- tai perintäpalvelulle edelleen perittäväksi (factoring)
+  * Laskutus- tai perintäpalvelu laskuttaa muistutus- ja perintäkulut hinnastonsta mukaisesti
 
 ## Asiakkaan laskutus
 
-Toimittaja laskuttaa asiakkasta asiakkaan hinnaston mukaisen asiakkaan kanssa erikseen sopimalla tavalla.
-
-Maksuaika laskusta on 14 päivää.
-
-Viivästyskorko korkolain mukaisesti.
-
-Toimittaja voi myydä laskun laskutus- tai perintäpalvelulle edelleen perittäväksi (factoring).
+* Toimittaja laskuttaa asiakasta asiakkaan hinnaston mukaisen asiakkaan kanssa erikseen sopimalla tavalla
+* Maksuaika laskusta on 14 päivää
+* Viivästyskorko korkolain mukaisesti
+* Toimittaja voi myydä laskun laskutus- tai perintäpalvelulle edelleen perittäväksi (factoring)
+  * Laskutus- tai perintäpalvelu laskuttaa muistutus- ja perintäkulut hinnastonsta mukaisesti
 
 ## Palvelun käytön raportointi
 
-Palvelun käytön volyymista kirjataan raportti taulukonlaskentaohjelmaan, jonka toimittaja jakaa tilaajalle käytettäväksi toimittajan [Proton Sheets](https://proton.me/support/sheets-getting-started) -palvelun kautta. Raportiin pääsy edellyttää käyttäjätunnuksen rekisteröintiä Proton-palveluun.
+Palvelun käytön volyymista kirjataan raportti taulukonlaskentaohjelmaan, jonka toimittaja jakaa tilaajalle käytettäväksi toimittajan [Proton Sheets](https://proton.me/support/sheets-getting-started) -palvelun kautta. Raporttiin pääsy edellyttää käyttäjätunnuksen rekisteröintiä Proton-palveluun.
 
 ## Hinnaston virhevastuu
 
-Mahdollinen virhe hinnastossa lasketaan toimittajan eduksi sen tarkoituksen mukaan, mitä hinnastolla voi ymmärtää tarkoitettavan mikäli virheen korjaamisesta ei muutoin päästä neuvottelemalla sopimukseen. 
+Mahdollinen virhe hinnastossa lasketaan toimittajan eduksi sen tarkoituksen mukaan, mitä hinnastolla voi ymmärtää tarkoitettavan, mikäli virheen korjaamisesta ei muutoin päästä neuvottelemalla sopimukseen.
