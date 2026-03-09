@@ -134,15 +134,36 @@ a {
   font-style: italic;
 }
 
-.maincontent {
+.maincontent, .frontpage-noteworthy {
   max-width: 800px;
   margin: 0 auto;
   //text-align: center;
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid $light-gray;
+    margin-bottom: 2rem;
+    text-align: left;
+
+    th {
+      background-color: $light-green-accent;
+      color: $black;
+      padding: 0.5rem 1rem;
+      border-bottom: 1.5px solid $black;
+    }
+
+    td {
+      padding: 0.5rem 1rem;
+    }
+
+    tbody tr:nth-child(even) {
+      background-color: $light-gray;
+    }
+  }
 }
 
 .frontpage-noteworthy {
-  max-width: 800px;
-  margin: 0 auto;
   text-align: center;
 }
 
