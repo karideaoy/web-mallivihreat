@@ -1,6 +1,8 @@
 ---
 ---
 
+/* Cache bust: {{ site.time | date: '%Y%m%d%H%M%S' }} */
+
 @import url(https://fonts.bunny.net/css?family=amiri:400,400i,700,700i);
 
 $primary-color: #006845;
